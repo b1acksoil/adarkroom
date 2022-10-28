@@ -91,11 +91,6 @@
 				window.location = 'browserWarning.html';
 			}
 
-			// Check for mobile
-			if(Engine.isMobile()) {
-				window.location = 'mobileWarning.html';
-			}
-
 			Engine.disableSelection();
 
 			if(this.options.state != null) {
@@ -260,10 +255,6 @@
 		},
 		browserValid: function() {
 			return ( location.search.indexOf( 'ignorebrowser=true' ) >= 0 || ( typeof Storage != 'undefined' && !oldIE ) );
-		},
-
-		isMobile: function() {
-			return ( location.search.indexOf( 'ignorebrowser=true' ) < 0 && /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test( navigator.userAgent ) );
 		},
 
 		saveGame: function() {
